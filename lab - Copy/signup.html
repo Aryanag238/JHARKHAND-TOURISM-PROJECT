@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign Up — Jharkhand Tourism</title>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .signup-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+      background: linear-gradient(180deg, rgba(6,30,54,0.02), rgba(255,255,255,0.02));
+    }
+    .signup-card {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(10,20,40,0.06);
+      overflow: hidden;
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-card-border);
+    }
+    .signup-card .card__body { padding: 28px; }
+    .auth-head { display:flex; gap:12px; align-items:center; margin-bottom:12px; }
+    .auth-head img { height:44px; width:auto; border-radius:8px; }
+    .signup-actions { display:flex; gap:8px; margin-top:16px; align-items:center; justify-content:space-between; }
+    .footer-small { text-align:center; padding:14px; border-top:1px solid var(--color-card-border); font-size:13px; color:var(--color-text-secondary); }
+    @media (max-width:520px) {
+      .signup-card { margin: 16px; }
+      .auth-head .title { font-size:18px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="signup-page">
+    <div class="signup-card card">
+      <div class="card__body">
+        <div class="auth-head">
+          <img src="logo.png" alt="logo">
+          <div>
+            <h2 class="title" style="margin:0;">Create an account</h2>
+            <div style="font-size:13px; color:var(--color-text-secondary)">Join Jharkhand Tourism today</div>
+          </div>
+        </div>
+
+        <form id="signupForm" novalidate>
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input class="form-control" type="text" name="name" placeholder="Your full name" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input class="form-control" type="email" name="email" placeholder="you@domain.com" required />
+            <div class="form-help" id="emailHelp" style="display:none;color:#b30000;font-size:13px;margin-top:6px;"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input class="form-control" type="password" name="password" placeholder="Enter password" required minlength="6" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Confirm Password</label>
+            <input class="form-control" type="password" name="confirm" placeholder="Re-enter password" required minlength="6" />
+            <div class="form-help" id="passwordHelp" style="display:none;color:#b30000;font-size:13px;margin-top:6px;"></div>
+          </div>
+
+          <label style="display:flex; align-items:center; gap:8px; font-size:14px; margin-top:8px;">
+            <input type="checkbox" name="terms" required /> I agree to the <a href="#">Terms</a> & <a href="#">Privacy Policy</a>
+          </label>
+
+          <div class="signup-actions">
+            <button type="submit" class="btn btn--primary">Sign Up</button>
+            <a href="login.html" class="btn btn--outline">Already have an account?</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="footer-small">
+        © <span id="year"></span> Jharkhand Tourism
+      </div>
+    </div>
+  </main>
+
+  <script src="signup.js" defer></script>
+</body>
+</html>

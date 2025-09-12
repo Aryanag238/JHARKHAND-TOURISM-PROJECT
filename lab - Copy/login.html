@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign In — Jharkhand Tourism</title>
+
+  <!-- If you keep a central style.css, this can reuse it -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Optional small page-specific styles -->
+  <style>
+    /* page-specific overrides */
+    .login-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+      background: linear-gradient(180deg, rgba(6,30,54,0.02), rgba(255,255,255,0.02));
+    }
+    .login-card {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(10,20,40,0.06);
+      overflow: hidden;
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-card-border);
+    }
+    .login-card .card__body { padding: 28px; }
+    .auth-head { display:flex; gap:12px; align-items:center; margin-bottom:12px; }
+    .auth-head img { height:44px; width:auto; border-radius:8px; }
+    .login-actions { display:flex; gap:8px; margin-top:12px; align-items:center; justify-content:space-between; }
+    .social-login { display:flex; gap:8px; margin-top:16px; }
+    .social-login button { flex:1; }
+    .helper-row { display:flex; gap:12px; align-items:center; justify-content:space-between; margin-top:8px; }
+    .footer-small { text-align:center; padding:14px; border-top:1px solid var(--color-card-border); font-size:13px; color:var(--color-text-secondary); }
+    @media (max-width:520px) {
+      .login-card { margin: 16px; }
+      .auth-head .title { font-size:18px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="login-page">
+    <div class="login-card card">
+      <div class="card__body">
+        <div class="auth-head">
+          <img src="logo.png" alt="logo">
+          <div>
+            <h2 class="title" style="margin:0;">Welcome back</h2>
+            <div style="font-size:13px; color:var(--color-text-secondary)">Sign in to continue to Jharkhand Tourism</div>
+          </div>
+        </div>
+
+        <form id="loginPageForm" novalidate>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input class="form-control" type="email" name="email" placeholder="you@domain.com" required />
+            <div class="form-help" id="emailHelp" style="display:none;color:#b30000;font-size:13px;margin-top:6px;"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input class="form-control" type="password" name="password" placeholder="Enter password" required minlength="6" />
+            <div class="form-help" id="passwordHelp" style="display:none;color:#b30000;font-size:13px;margin-top:6px;"></div>
+          </div>
+
+          <div class="helper-row">
+            <label style="display:flex; align-items:center; gap:8px; font-size:14px;">
+              <input type="checkbox" name="remember" /> Remember me
+            </label>
+            <a href="#" id="forgotLink">Forgot password?</a>
+          </div>
+
+          <div class="login-actions">
+            <button type="submit" class="btn btn--primary">Sign in</button>
+            <a href="index.html" class="btn btn--outline" style="display:inline-flex;align-items:center;gap:8px;padding:10px 14px;">Back</a>
+          </div>
+
+          <div class="social-login">
+            <button type="button" class="btn btn--outline" id="btnGoogle">Continue with Google</button>
+            <button type="button" class="btn btn--outline" id="btnFacebook">Continue with Facebook</button>
+          </div>
+
+          <p style="margin-top:14px; font-size:14px;">
+            Don't have an account?
+            <a href="signup.html" id="createAccount">Create account</a>
+          </p>
+        </form>
+      </div>
+
+      <div class="footer-small">
+        By signing in you agree to our <a href="#" style="color:var(--color-primary)">Terms</a> and <a href="#" style="color:var(--color-primary)">Privacy Policy</a>.
+      </div>
+    </div>
+  </main>
+
+  <script src="login.js" defer></script>
+</body>
+</html>
