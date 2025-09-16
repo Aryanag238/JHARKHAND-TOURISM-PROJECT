@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page - Premium Subscription</title>
+    <link rel="stylesheet" href="payment.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section - Features -->
+        <div class="features-section">
+            <h2>Interactive Features:</h2>
+            <ul class="features-list">
+                <li><i class="fas fa-check"></i> Real-time form validation with error messaging</li>
+                <li><i class="fas fa-check"></i> Card format formatting and CVV visibility toggle</li>
+                <li><i class="fas fa-check"></i> Payment method switching with dynamic form updates</li>
+                <li><i class="fas fa-check"></i> Checkout process simulation</li>
+                <li><i class="fas fa-check"></i> Loading states and success confirmation</li>
+                <li><i class="fas fa-check"></i> Responsive design that works on mobile and desktop devices</li>
+                <li><i class="fas fa-check"></i> Progress indicator showing checkout steps</li>
+            </ul>
+
+            <h2>Technical Implementation:</h2>
+            <p>This checkout page demonstrates modern web development practices including professional touches like security badges, secure back-page submission protection, and intelligent form completion. The interface is designed to integrate with a payment processor like Stripe or payment backend functionality.</p>
+
+            <ul class="tech-features">
+                <li><i class="fas fa-shield-alt"></i> Secure payment processing architecture</li>
+                <li><i class="fas fa-lock"></i> SSL Stripe integration for real payment processing</li>
+                <li><i class="fas fa-mobile-alt"></i> Responsive design code functionality</li>
+                <li><i class="fas fa-code"></i> API-based payment methods for recurring subscriptions</li>
+            </ul>
+        </div>
+
+        <!-- Right Section - Payment Form -->
+        <div class="payment-section">
+            <!-- Progress Steps -->
+            <div class="progress-steps">
+                <div class="step completed">
+                    <div class="step-number">1</div>
+                    <span>Service Checkout</span>
+                </div>
+                <div class="step active">
+                    <div class="step-number">2</div>
+                    <span>Payment</span>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <span>Confirmation</span>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="payment-methods">
+                <h3>Payment Method</h3>
+                <div class="payment-options">
+                    <div class="payment-option active" data-method="card">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Credit or Debit Card</span>
+                        <small>Visa, Mastercard, American Express</small>
+                    </div>
+                    <div class="payment-option" data-method="paypal">
+                        <i class="fab fa-paypal"></i>
+                        <span>PayPal</span>
+                        <small>Pay with your PayPal account</small>
+                    </div>
+                   
+                    <div class="payment-option" data-method="applepay">
+                        <i class="fab fa-apple-pay"></i>
+                        <span>Apple Pay</span>
+                        <small>Touch ID or Face ID Required</small>
+                    </div>
+                     <div class="payment-option" data-method="UPI">
+                        <i class="fab fa-UPI"></i>
+                        <span>UPI</span>
+                        <small>Pay with your UPI account</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Form -->
+            <div class="card-form" id="cardForm">
+                <div class="contact-info">
+                    <h4>Contact Information</h4>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                </div>
+
+                <div class="payment-details">
+                    <h4>Payment Details</h4>
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                        <span class="error-message" id="cardError"></span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date</label>
+                            <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+                            <span class="error-message" id="expiryError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="password" id="cvv" placeholder="123" maxlength="4" required>
+                            <span class="error-message" id="cvvError"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardName">Cardholder Name</label>
+                        <input type="text" id="cardName" placeholder="John Doe" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-item">
+                    <span>Premium Subscription</span>
+                    <span>₹500</span>
+                </div>
+                <div class="summary-item">
+                    <span>Additional Storage (100GB)</span>
+                    <span>₹9.00</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-item">
+                    <span>Subtotal</span>
+                    <span>₹509</span>
+                </div>
+                <div class="summary-item discount">
+                    <span>Discount</span>
+                    <span>-₹5.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+                <div class="summary-item">
+                    <span>Tax</span>
+                    <span>₹5.00</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-item total">
+                    <span>Total</span>
+                    <span>₹509</span>
+                </div>
+                <div class="savings">
+                    <span class="savings-text">You saved ₹5.00!</span>
+                </div>
+
+                <div class="guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Money-back guarantee</span>
+                    <small>Full refund within 30 days if you're not completely satisfied</small>
+                </div>
+
+                <div class="limited-offer">
+                    <i class="fas fa-clock"></i>
+                    <span>Limited Time Offer</span>
+                    <small>Get 20% off your next purchase with code SAVE20</small>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="pay-button" id="payButton">
+                <span class="button-text">Complete Payment</span>
+                <span class="loading-spinner" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+</html>
